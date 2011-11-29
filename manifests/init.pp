@@ -37,31 +37,31 @@ class git {
         # service is running
         #
 
-        package { "git-daemon-run":
-            ensure => installed
-        }
+        #package { "git-daemon-run":
+        #    ensure => installed
+        #}
 
-        package { "xinetd" :
-          ensure => installed
-        }
+        #package { "xinetd" :
+        #  ensure => installed
+        #}
         
         
-        file { "/etc/sv/git-daemon/run" :
-          source => "puppet://$server/git/run",
-          ensure => present,
-        }
+        #file { "/etc/sv/git-daemon/run" :
+        #  source => "puppet://$server/git/run",
+        #  ensure => present,
+        #}
         
-        service { "git":
-            enable => true,
-            ensure => running,
-            require => Package["git-daemon-run"],
-            notify => Service["xinetd"]
-        }
+        #service { "git":
+        #    enable => true,
+        #    ensure => running,
+        #    require => Package["git-daemon-run"],
+        #    notify => Service["xinetd"]
+        #}
 
-        service { "xinetd":
-            enable => true,
-            ensure => running
-        }
+        #service { "xinetd":
+        #    enable => true,
+        #    ensure => running
+        #}
 
         file { ["/srv/git/", "/srv/git/cache", "/srv/git/cache/git"]:
             ensure => directory,
