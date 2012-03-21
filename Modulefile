@@ -1,0 +1,10 @@
+name 'Analytical Labs-git'
+version '1.0'
+
+author 'Tom Barber'
+license ''
+project_page ''
+source ''
+summary ''
+description ''
+dependency 'Analytical Labs/os', '==1.0'
