@@ -33,7 +33,7 @@ class git::gitolite{
 			mode => 755,
 			owner => git,
 			group => git,
-			source => "puppet:///modules/cloudbi/post-receive",
+			source => "puppet:///modules/git/post-receive",
 			require => [Package["gitolite"], Exec["create-gitolite"]]
 	}
 	exec {
