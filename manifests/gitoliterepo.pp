@@ -1,12 +1,6 @@
 define git::gitoliterepo($ensure, $key){
 	
-	exec { "export gitolite admin":
-					cwd => "/home/git",
-			user => "git",
-			environment => "HOME=/home/git",
-    	command => "git clone git@localhost:gitolite-admin.git /home/git/gitolite-admin",
-    	creates => "/home/git/gitolite-admin",
-	} ->
+
 	common::concatfilepart {"repo-${name}":
     	ensure  => $ensure,
     	file    => "/home/git/gitolite-admin/conf/gitolite.conf",
