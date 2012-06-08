@@ -35,7 +35,7 @@ class git::gitolite{
 			group => git,
 			source => "puppet:///modules/git/post-receive",
 			require => [Package["gitolite"], Exec["create-gitolite"]]
-	}
+	} ->
 	exec {
 		"update-gitolite" :
 			cwd => "/home/git",
@@ -44,6 +44,20 @@ class git::gitolite{
 			user => "git",
 			environment => "HOME=/home/git",
 			require => File["/home/git/.gitolite/hooks/common/post-receive"],
+	} -> 
+	file {
+		"/usr/bin/setuprepo":
+		source => "puppet:///modules/cloudbi/setup_script",
+		mode=>755,
+	} ->
+	exec {
+		"extract repo" :
+			cwd => "/home/git",
+			command => "setuprepo",
+			creates => "/home/git/gitolite-admin",
+			user => "git",
+			environment => "HOME=/home/git",
+			require => [File["/usr/bin/setuprepo"],File["/home/git/.gitolite/hooks/common/post-receive"]],
 	}
 	
 	
