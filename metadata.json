@@ -9,7 +9,7 @@
   "version": "1.0",
   "checksums": {
     "Makefile": "121e7e4747f5c23121c1ec1f73f8713c",
-    "Modulefile": "7caa03ae89d3007dce9ee655c60344d8",
+    "Modulefile": "5a7cacdd96963c933ddbb26fa16273a6",
     "README": "d41d8cd98f00b204e9800998ecf8427e",
     "documentation/Makefile": "3e93dc91800c84e0084e68cded852e96",
     "documentation/en-US/Appendix.xml": "7f56c644a9925683327f515764257470",
@@ -22,10 +22,12 @@
     "files/git.init": "7379d27dadf5ad9aecf4e4947a7ae4e1",
     "files/git_init_script": "6f32c37f710b4d6ecfa1ff1876f6fe77",
     "files/post-commit": "1508c6ac1a453267716193337450db50",
+    "files/post-receive": "8a85c3275a52167b30693f92b27a538d",
     "files/run": "d3294481b5b37804a6152e876e2bd4ea",
     "manifests/clean.pp": "3117495fe0cbcc720344ae147eaa00cf",
     "manifests/client.pp": "221a9025e63d253825db9a7f8e84be16",
     "manifests/clone.pp": "ee8a2d4fb26aa8b74ae54ac18dca0659",
+    "manifests/gitolite.pp": "1445f773e74b32656863f40c9fa69359",
     "manifests/init.pp": "29a90805c07b80d9490df499af8d6503",
     "manifests/pull.pp": "81ca838d4ca31b197a89739d7091af14",
     "manifests/repository.pp": "d86739e041de2b658aacabb2a1ae920c",
@@ -60,7 +62,11 @@
   "dependencies": [
     {
       "name": "Analytical Labs/os",
-      "versionRequirement": "\u003d\u003d1.0"
+      "version_requirement": "\u003d\u003d1.0"
+    },
+    {
+      "name": "Analytical Labs/ssh",
+      "version_requirement": "\u003d\u003d1.0"
     }
   ]
 }

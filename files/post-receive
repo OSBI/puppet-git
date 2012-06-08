@@ -1,0 +1,15 @@
+#!/bin/bash
+S3=$(basename "$PWD")
+echo "git repo is $S3"
+S2='etl.git'
+echo "match var is $S2"
+
+if [ "$S2" == "$S3" ]; then
+unset GIT_INDEX_FILE
+export GIT_WORK_TREE=/srv/etlexport/code
+export GIT_DIR=/home/git/repositories/etl.git
+git checkout -f
+echo updating crontab
+chmod 644 /srv/etlexport/code/control
+sudo -u etl crontab /srv/etlexport/code/control
+fi
