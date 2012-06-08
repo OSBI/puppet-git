@@ -1,6 +1,9 @@
 define git::gitoliterepo($ensure){
 	
 	exec { "export gitolite admin":
+					cwd => "/home/git",
+			user => "git",
+			environment => "HOME=/home/git",
     	command => "git clone git@localhost:gitolite-admin.git /home/git/gitolite-admin",
     	creates => "/home/git/gitolite-admin",
 	} ->
