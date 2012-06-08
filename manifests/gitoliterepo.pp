@@ -1,4 +1,4 @@
-define git::gitoliterepo($ensure, $name){
+define git::gitoliterepo($ensure){
 	
 	exec { "export gitolite admin":
     	command => "git clone git@localhost:gitolite-admin.git /home/git/gitolite-admin",
