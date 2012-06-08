@@ -14,7 +14,7 @@ define git::gitoliteimport($repo, $directory=false, $subdir=""){
 			environment => "HOME=/home/git",
     		command => "cp -rf ${name} /home/git/${repo}/${subdir}",
     		creates => "/home/git/${repo}/${subdir}/${name}",
-    		require => Exec["export ${name} repo"],
+    		require => Exec["export ${repo} repo for ${name}"],
     	}
 	
 	} else {
@@ -24,7 +24,7 @@ define git::gitoliteimport($repo, $directory=false, $subdir=""){
 			environment => "HOME=/home/git",
     		command => "cp -rf ${name} /home/git/${repo}/${subdir}",
     		creates => "/home/git/${repo}/${subdir}/${name}",
-    		require => Exec["export ${name} repo"],
+    		require => Exec["export ${repo} repo for ${name}"],
 	}
 	}
 	
