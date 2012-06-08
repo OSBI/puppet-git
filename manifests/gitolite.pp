@@ -58,13 +58,6 @@ class git::gitolite{
 			user => "git",
 			environment => "HOME=/home/git",
 			require => [File["/usr/bin/setuprepo"],File["/home/git/.gitolite/hooks/common/post-receive"]],
-	} ->
-		exec { "export gitolite admin":
-					cwd => "/home/git",
-			user => "git",
-			environment => "HOME=/home/git",
-    	command => "git clone git@localhost:gitolite-admin.git /home/git/gitolite-admin",
-    	creates => "/home/git/gitolite-admin",
-	}
+	} 
 	
 }
