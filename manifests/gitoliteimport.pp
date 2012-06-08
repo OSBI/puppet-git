@@ -20,8 +20,6 @@ define git::gitoliteimport($repo, $directory=false, $subdir=""){
 	} else {
 		exec { "copy file ${name}":
 			cwd => "/home/git",
-			user => "git",
-			environment => "HOME=/home/git",
     		command => "cp -rf ${name} /home/git/${repo}/${subdir}",
     		creates => "/home/git/${repo}/${subdir}/${name}",
     		require => Exec["export ${repo} repo for ${name}"],
