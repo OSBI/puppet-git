@@ -1,4 +1,4 @@
-define git::gitoliterepo($ensure){
+define git::gitoliterepo($ensure, $key){
 	
 	exec { "export gitolite admin":
 					cwd => "/home/git",
