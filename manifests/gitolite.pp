@@ -24,7 +24,7 @@ class git::gitolite{
 			creates => "/home/git/repositories",
 			user => "git",
 			environment => "HOME=/home/git",
-			require => Package["gitolite"],
+			require => [Package["gitolite"],Ssh::Sshclient["git"]],
 	}
 	
 	
