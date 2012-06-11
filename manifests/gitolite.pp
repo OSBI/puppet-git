@@ -58,6 +58,9 @@ class git::gitolite{
 			user => "git",
 			environment => "HOME=/home/git",
 			require => [File["/usr/bin/setuprepo"],File["/home/git/.gitolite/hooks/common/post-receive"]],
-	} 
-	
+	} -> 
+	git::gitoliterepo{ "gitolite-admin":
+		ensure => present,
+		key => "id_rsa",
+	}	
 }
