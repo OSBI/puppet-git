@@ -18,7 +18,7 @@ define git::gitoliteimport($repo, $directory=false, $subdir="", $file){
 		cwd => "/home/git/${repo}",
 		user => "git",
 		environment => "HOME=/home/git",
-    	command => "git add * ; git commit -a -m \"import ${file}\" ; git push && mkdir -p /home/git/committed/ && touch /home/git/committed/${name}",
+    	command => "git add * ; git commit -a -m \"import ${file}\" ; git push origin master && mkdir -p /home/git/committed/ && touch /home/git/committed/${name}",
     	creates => "/home/git/committed/${name}"
 	}
 	} else {
@@ -32,7 +32,7 @@ define git::gitoliteimport($repo, $directory=false, $subdir="", $file){
 		cwd => "/home/git/${repo}",
 		user => "git",
 		environment => "HOME=/home/git",
-    	command => "git add * ; git commit -a -m \"import ${name}\" ; git push && mkdir -p /home/git/committed/ && touch /home/git/committed/${name}",
+    	command => "git add * ; git commit -a -m \"import ${name}\" ; git push origin master && mkdir -p /home/git/committed/ && touch /home/git/committed/${name}",
     	creates => "/home/git/committed/${name}"
     	
 	}
