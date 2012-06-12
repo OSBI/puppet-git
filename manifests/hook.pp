@@ -1,11 +1,11 @@
-define git::hook($ensure = "present" ) {
+define git::hook($ensure = "present", $source ='' ) {
 	
 	file {
 		"/home/git/.gitolite/hooks/common/$name" :
 			mode => 755,
 			owner => git,
 			group => git,
-			source => "puppet:///modules/git/${name}",
+			source => $source,
 			require => [Package["gitolite"], Exec["create-gitolite"]]
 	} ->
 	exec {
