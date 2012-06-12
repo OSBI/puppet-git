@@ -10,7 +10,7 @@ common::concatenated_file_part { "/tmp/files/${name}" :
 	 dir => "/tmp/files/",
 	 content => template("git/default-repo.erb"),
 	 }
-	 }
+	 
 #	} ->
 #  	common::concatenated_file { "/tmp/gitolite.conf" :
 #  		dir => "/tmp/files/",
