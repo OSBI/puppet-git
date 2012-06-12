@@ -38,7 +38,7 @@ class git::gitolite{
 			creates => "/home/git/gitolite-admin",
 			user => "git",
 			environment => "HOME=/home/git",
-			require => [File["/usr/bin/setuprepo"],File["/home/git/.gitolite/hooks/common/post-receive"]],
+			require => File["/usr/bin/setuprepo"],
 	} ->
 	file { "/home/git/repoheader.txt":
 		source => "puppet:///modules/git/repoheader.txt",
