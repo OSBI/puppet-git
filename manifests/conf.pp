@@ -6,7 +6,7 @@ define git::conf($ensure=present) {
 #    	content => template("git/default-repo.erb"),
 #  	}
 
-common::concatenated_file_part { "/tmp/files/${name}" :
+common::concatenated_file_part { "${name}" :
 	 dir => "/tmp/files/",
 	 content => template("git/default-repo.erb"),
 	 }
