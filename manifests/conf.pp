@@ -5,7 +5,7 @@ define git::conf($ensure=present) {
     	ensure  => $ensure,
     	file    => "/home/git/gitolite-admin/conf/gitolite.conf",
     	content => template("git/default-repo.erb"),
-    	header => "/tmp/header.txt"
+    	header => "/home/git/repoheader.txt"
      	}
 
 
