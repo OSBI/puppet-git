@@ -7,7 +7,7 @@ echo "match var is $S2"
 
 if [ "$S2" == "$S3" ]; then
 unset GIT_INDEX_FILE
-export GIT_WORK_TREE=/srv/saiku-datasources/
+export GIT_WORK_TREE=/srv/etlexport/code
 export GIT_DIR=/home/git/repositories/etl.git
 git checkout -f
 echo updating crontab
@@ -17,7 +17,14 @@ fi
 
 if [ "$GL_REPO" == "saiku-datasources" ]; then
 unset GIT_INDEX_FILE
-export GIT_WORK_TREE=/srv/saiku-datasources/
+export GIT_WORK_TREE=/srv/tomcat/saiku/webapps/saiku/WEB-INF/classes/saiku-datasources/
+export GIT_DIR=$GL_REPO_BASE_ABS/$GL_REPO.git
+git checkout -f
+fi
+
+if [ "$GL_REPO" == "saiku-schema" ]; then
+unset GIT_INDEX_FILE
+export GIT_WORK_TREE=/srv/saiku-schema/
 export GIT_DIR=$GL_REPO_BASE_ABS/$GL_REPO.git
 git checkout -f
 fi
