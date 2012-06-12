@@ -6,11 +6,11 @@ define git::gitoliterepo($ensure, $key){
 		environment => "HOME=/home/git",
     	command => "git clone git@localhost:gitolite-admin.git /home/git/gitolite-admin",
     	creates => "/home/git/gitolite-admin",
-	}
+	} ->
 
  	git::conf{ $name:
 		ensure => present,
-	}
+	} ->
   	exec { "commit gitolite admin for ${name}":
 		cwd => "/home/git/gitolite-admin",
 		user => "git",
