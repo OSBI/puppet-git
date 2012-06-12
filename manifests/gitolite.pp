@@ -25,25 +25,6 @@ class git::gitolite{
 			user => "git",
 			environment => "HOME=/home/git",
 			require => [Package["gitolite"],Ssh::Sshclient["git"]],
-	}
-	
-	
-	file {
-		"/home/git/.gitolite/hooks/common/post-receive" :
-			mode => 755,
-			owner => git,
-			group => git,
-			source => "puppet:///modules/git/post-receive",
-			require => [Package["gitolite"], Exec["create-gitolite"]]
-	} ->
-	exec {
-		"update-gitolite" :
-			cwd => "/home/git",
-			command => "/usr/bin/gl-setup /home/git/.ssh/id_rsa.pub",
-			creates => "/home/git/repositories/etl.git/hooks/post-receive",
-			user => "git",
-			environment => "HOME=/home/git",
-			require => File["/home/git/.gitolite/hooks/common/post-receive"],
 	} -> 
 	file {
 		"/usr/bin/setuprepo":

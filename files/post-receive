@@ -1,4 +1,5 @@
 #!/bin/bash
+#FILE CHECK DO NOT REMOVE
 echo "glrepo is: $GL_REPO"
 S3=$(basename "$PWD")
 echo "git repo is $S3"
