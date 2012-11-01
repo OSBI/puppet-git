@@ -16,7 +16,11 @@ class git::gitolite{
 			ensure => present,
 	}
 	
-  	
+  file {"/home/git/.gitolite.rc":
+    source => "puppet:///modules/git/gitolite.rc",
+    ensure => present,
+    require => [Package["gitolite"],Ssh::Sshclient["git"]],
+  }	->
 	exec {
 		"create-gitolite" :
 			cwd => "/home/git",
@@ -24,7 +28,6 @@ class git::gitolite{
 			creates => "/home/git/repositories",
 			user => "git",
 			environment => "HOME=/home/git",
-			require => [Package["gitolite"],Ssh::Sshclient["git"]],
 	} -> 
 	file {
 		"/usr/bin/setuprepo":
