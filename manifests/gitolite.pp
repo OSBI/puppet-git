@@ -33,11 +33,12 @@ class git::gitolite{
 		"/usr/bin/setuprepo":
 		source => "puppet:///modules/cloudbi/setup_script",
 		mode=>755,
-	} ->
+	} 
+	->
 	exec {
 		"extract repo" :
 			cwd => "/home/git",
-			command => "setuprepo",
+			command => "setuprepo > /tmp/out.log",
 			creates => "/home/git/gitolite-admin",
 			user => "git",
 			environment => "HOME=/home/git",
