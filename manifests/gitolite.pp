@@ -38,7 +38,7 @@ class git::gitolite{
 	exec {
 		"extract repo" :
 			cwd => "/home/git",
-			command => "setuprepo > /tmp/out.log",
+			command => "bash -c 'setuprepo > /tmp/out.log'",
 			creates => "/home/git/gitolite-admin",
 			user => "git",
 			environment => "HOME=/home/git",
