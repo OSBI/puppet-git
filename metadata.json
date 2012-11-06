@@ -23,7 +23,7 @@
     "files/git_init_script": "6f32c37f710b4d6ecfa1ff1876f6fe77",
     "files/gitolite.rc": "e940dd8441d23c8eb817af50e467f2c0",
     "files/post-commit": "1508c6ac1a453267716193337450db50",
-    "files/repoheader.txt": "c0c39f7e6d2efd0e68e0b0b633c3177f",
+    "files/repoheader.txt": "3bb590175372c24ce17feaba6b0aa9bf",
     "files/run": "d3294481b5b37804a6152e876e2bd4ea",
     "manifests/clean.pp": "3117495fe0cbcc720344ae147eaa00cf",
     "manifests/client.pp": "221a9025e63d253825db9a7f8e84be16",
