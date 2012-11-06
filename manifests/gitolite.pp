@@ -35,15 +35,14 @@ class git::gitolite{
 		mode=>755,
 	} 
 	->
-#	exec {
-#		"extract repo" :
-#			cwd => "/home/git",
-#			command => "setuprepo > /tmp/out.log",
-#			creates => "/home/git/gitolite-admin",
-#			user => "git",
-#			environment => "HOME=/home/git",
-#			require => File["/usr/bin/setuprepo"],
-#	} ->
+	exec {
+		"extract repo" :
+			cwd => "/home/git",
+			command => "setuprepo > /tmp/out.log",
+			creates => "/home/git/gitolite-admin",
+			user => "git",
+			environment => "HOME=/home/git",
+	} ->
 	file { "/home/git/repoheader.txt":
 		source => "puppet:///modules/git/repoheader.txt",
 		ensure => present

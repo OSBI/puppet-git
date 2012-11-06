@@ -29,7 +29,7 @@
     "manifests/client.pp": "221a9025e63d253825db9a7f8e84be16",
     "manifests/clone.pp": "ee8a2d4fb26aa8b74ae54ac18dca0659",
     "manifests/conf.pp": "3ea8a1da6aec7c114019c7e1966e378a",
-    "manifests/gitolite.pp": "4a51f1d89baf51b6d473597bd3e1fe53",
+    "manifests/gitolite.pp": "bad6bba6bf829db6b1bd06a319c81f9a",
     "manifests/gitoliteimport.pp": "393ab061400da112e17e423d8e34d3b1",
     "manifests/gitoliterepo.pp": "75860fadc4cc4d9b5b8724e55e4e90ca",
     "manifests/hook.pp": "676cc76c2e2af90bd820e4db65d6e263",
