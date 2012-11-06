@@ -31,7 +31,7 @@
     "manifests/conf.pp": "3ea8a1da6aec7c114019c7e1966e378a",
     "manifests/gitolite.pp": "3c122d1a6417261d0a4a0864a2f5de2e",
     "manifests/gitoliteimport.pp": "393ab061400da112e17e423d8e34d3b1",
-    "manifests/gitoliterepo.pp": "b0c9411d6c284f5c83c490cf1f2333d3",
+    "manifests/gitoliterepo.pp": "75860fadc4cc4d9b5b8724e55e4e90ca",
     "manifests/hook.pp": "676cc76c2e2af90bd820e4db65d6e263",
     "manifests/init.pp": "29a90805c07b80d9490df499af8d6503",
     "manifests/pull.pp": "81ca838d4ca31b197a89739d7091af14",
