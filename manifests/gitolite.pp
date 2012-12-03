@@ -47,5 +47,10 @@ class git::gitolite{
 		source => "puppet:///modules/git/repoheader.txt",
 		ensure => present
 		
-	}
+	} ->
+	
+	 git::hook { "post-receive":
+    ensure => present,
+    source => "puppet:///modules/cloudbi/post-receive"
+  }
 }
