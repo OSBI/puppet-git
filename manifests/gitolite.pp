@@ -15,7 +15,11 @@ class git::gitolite{
 		"git-daemon-run" :
 			ensure => present,
 	}
-	
+	file {"/home/git":
+	  ensure =>directory,
+	  owner => git,
+	  group => git,
+	}->
   file {"/home/git/.gitolite.rc":
     source => "puppet:///modules/git/gitolite.rc",
     ensure => present,
@@ -24,7 +28,7 @@ class git::gitolite{
 	exec {
 		"create-gitolite" :
 			cwd => "/home/git",
-			command => "chown -R git:git /home/git && git config --global user.email \"git@meteoritehosting.com\" && git config --global user.name \"Meteorite Hosting\" &&/usr/bin/gl-setup /home/git/.ssh/id_rsa.pub",
+			command => "git config --global user.email \"git@meteoritehosting.com\" && git config --global user.name \"Meteorite Hosting\" &&/usr/bin/gl-setup /home/git/.ssh/id_rsa.pub",
 			creates => "/home/git/repositories",
 			user => "git",
 			environment => "HOME=/home/git",
