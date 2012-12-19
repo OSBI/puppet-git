@@ -15,11 +15,7 @@ class git::gitolite{
 		"git-daemon-run" :
 			ensure => present,
 	}
-	file {"/home/git":
-	  ensure =>directory,
-	  owner => git,
-	  group => git,
-	}->
+	
   file {"/home/git/.gitolite.rc":
     source => "puppet:///modules/git/gitolite.rc",
     ensure => present,
