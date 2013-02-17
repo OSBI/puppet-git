@@ -1,5 +1,5 @@
-define git::conf($ensure=present) {
-
+define git::conf($key, $ensure=present) {
+	
 
 	common::concatfilepart {"repo-${name}":
     	ensure  => $ensure,
