@@ -10,7 +10,7 @@ define git::gitoliteimport ($repo, $directory = false, $subdir = "", $file) {
   if ($directory) {
     exec { "copy directory ${name}":
       cwd     => "/home/git",
-      command => "cp -rf ${file} /home/git/${repo}/${subdir}",
+      command => "cp -rf ${file} /home/git/${repo}/${subdir} && chown -R git:git /home/git/${repo}/${subdir}",
       creates => "/home/git/${repo}/${subdir}/${file}",
       require => Exec["export ${repo} repo for ${name}"],
     } -> exec { "commit ${repo} for ${name}":
